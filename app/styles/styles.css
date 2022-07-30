@@ -40,7 +40,12 @@ body {
 
 :root {
   --cl-white: hsl(0, 0%, 100%);
-  --cl-black: #000;
+  --cl-black: hsla(0, 0%, 0%, 1);
+  --cl-dk-blue: hsla(224, 44%, 23%, 1);
+  --cl-md-blue: hsla(189, 37%, 45%, 1);
+  --cl-vl-blue: hsla(189, 14%, 90%, 1);
+  --cl-lt-pink: hsla(9, 65%, 78%, 1);
+  --cl-accent-pink: hsla(359, 51%, 61%, 1);
 }
 
 .titulo {
