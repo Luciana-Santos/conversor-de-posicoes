@@ -36,3 +36,21 @@ body {
 .section {
   padding-block: rem(30);
 }
+
+.btn {
+  background: var(--cl-accent-pink);
+  padding-block: rem(12);
+  padding-inline: rem(26);
+  max-width: max-content;
+  border: none;
+  color: var(--cl-white);
+  font-size: rem(16);
+  text-transform: uppercase;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    letter-spacing: rem(1.8);
+    background: var(--cl-accent-hv);
+  }
+}
