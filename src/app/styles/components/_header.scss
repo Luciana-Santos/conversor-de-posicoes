@@ -1,0 +1,21 @@
+@use '../utils/' as *;
+
+.header {
+  padding-block: rem(40);
+  background: linear-gradient(90deg, rgba(32, 46, 83, 0.77) 0%, rgba(73, 145, 157, 0.77) 100%), url(https://images.unsplash.com/photo-1635372722656-389f87a941b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80);
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: var(--cl-vl-blue);
+
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: rem(1.5);
+    font-size: rem(22);
+    line-height: 1.5;
+
+    @include breakpoint(medium) {
+      font-size: rem(34);
+    }
+  }
+}
