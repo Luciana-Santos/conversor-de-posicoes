@@ -25,8 +25,9 @@ ul {
 body {
   min-height: 100vh;
   line-height: 1.5;
-  background-color: var(--cl-vdark-blue);
+  background-color: var(--cl-vl-blue);
   color: var(--cl-body);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .section {
@@ -41,6 +42,7 @@ body {
 :root {
   --cl-white: hsl(0, 0%, 100%);
   --cl-black: hsla(0, 0%, 0%, 1);
+  --cl-body: hsla(0, 0%, 12%, 1);
   --cl-dk-blue: hsla(224, 44%, 23%, 1);
   --cl-md-blue: hsla(189, 37%, 45%, 1);
   --cl-vl-blue: hsla(189, 14%, 90%, 1);
