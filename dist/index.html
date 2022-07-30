@@ -16,6 +16,27 @@
     </div>
   </header>
 
+  <main class="calc container">
+    <form class="calc__form">
+      <fieldset>
+        <label for="total-posicoes">Total de posições no ebook:</label>
+        <input type="text" name="total-posicoes" id="total-posicoes">
+      </fieldset>
+      <fieldset>
+        <label for="total-paginas">Total de páginas no livro:</label>
+        <input type="text" name="total-paginas" id="total-paginas">
+      </fieldset>
+      <button class="btn" type="submit">Calcular</button>
+    </form>
+
+    <div class="calc__resultado">
+      <p><span class="pag__unidade">1</span> página equivale:</p>
+      <h1><span>17,27</span> posições</h1>
+    </div>
+
+    <button class="pos-atual">Calcular posição atual</button>
+  </main>
+
   <script src="./app/js/index.js" defer></script>
 </body>
 

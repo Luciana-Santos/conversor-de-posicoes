@@ -1,0 +1,96 @@
+@use '../utils/' as *;
+
+.calc {
+  background: var(--cl-white);
+  margin-block: rem(30);
+  padding-inline: rem(30);
+  padding-block: rem(40);
+  display: grid;
+  gap: rem(60);
+  align-items: center;
+
+  &__form {
+    display: grid;
+    gap: rem(20);
+    
+    fieldset {
+      border: none;
+    }
+
+    label {
+      margin-bottom: rem(4);
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding-block: rem(6);
+      padding-inline: rem(10);
+      font-size: rem(16);
+      border: 2px solid transparent;
+      background: var(--cl-vl-blue);
+
+      &:hover, &:focus {
+        outline: none;
+        border-color: var(--cl-white);
+        box-shadow: 0 0 0 2px var(--cl-md-blue);
+      }
+    }
+  }
+
+  &__resultado {
+    text-align: center;
+    position: relative;
+    
+    .pag__unidade {
+      font-size: rem(22);
+      color: var(--cl-accent-pink);
+    }
+
+    h1 {
+      font-size: rem(16);
+      margin-top: rem(30);
+
+      span {
+        font-size: rem(36);
+        color: var(--cl-accent-pink);
+      }
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--cl-vl-blue);
+      margin-bottom: rem(40);
+      
+      @include breakpoint(medium) {
+        position: absolute;
+        height: 260px;
+        width: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .pos-atual {
+    grid-column: 1 / -1;
+    max-width: max-content;
+    background: none;
+    border: none;
+    font-size: rem(16);
+    color: var(--cl-accent-pink);
+    cursor: pointer;
+    text-decoration: underline;
+    padding: rem(5);
+  }
+
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-block: rem(60);
+    padding-block: rem(60);
+    padding-inline: rem(60);
+  }
+}
