@@ -37,6 +37,23 @@
     <button class="pos-atual">Calcular posição atual</button>
   </main>
 
+  <main class="calc container hide">
+    <form class="calc__form">
+      <fieldset>
+        <label for="total-paginas">Página atual:</label>
+        <input type="text" name="total-paginas" id="total-paginas">
+      </fieldset>
+      <button class="btn" type="submit">Calcular</button>
+    </form>
+
+    <div class="calc__resultado">
+      <p><span class="pag__unidade">1</span> página equivale:</p>
+      <h1><span>17,27</span> posições</h1>
+    </div>
+
+    <button class="pos-atual">Converter posições para página</button>
+  </main>
+
   <script src="./app/js/index.js" defer></script>
 </body>
 

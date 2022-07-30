@@ -51,6 +51,10 @@ body {
   background: var(--cl-accent-hv);
 }
 
+.hide {
+  display: none !important;
+}
+
 .container {
   width: min(100% - 2rem, 55rem);
   margin-inline: auto;
@@ -148,7 +152,7 @@ body {
 @media (min-width: 43.75em) {
   .calc__resultado::before {
     position: absolute;
-    height: 260px;
+    height: 180%;
     width: 2px;
     top: 50%;
     transform: translateY(-50%);

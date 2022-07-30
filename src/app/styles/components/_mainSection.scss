@@ -67,7 +67,7 @@
       
       @include breakpoint(medium) {
         position: absolute;
-        height: 260px;
+        height: 180%;
         width: 2px;
         top: 50%;
         transform: translateY(-50%);
