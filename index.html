@@ -21,11 +21,11 @@
     <form class="calc__form">
       <fieldset>
         <label for="total-posicoes">Total de posições no ebook:</label>
-        <input type="text" name="total-posicoes" id="total-posicoes" data-calc="posicoes-input">
+        <input type="text" name="total-posicoes" id="total-posicoes" data-calc="posicoes-input" placeholder="8564">
       </fieldset>
       <fieldset>
         <label for="total-paginas">Total de páginas no livro:</label>
-        <input type="text" name="total-paginas" id="total-paginas" data-calc="paginas-input">
+        <input type="text" name="total-paginas" id="total-paginas" data-calc="paginas-input" placeholder="496">
       </fieldset>
       <button class="btn" type="submit" data-calc="btn-calcular">Calcular</button>
     </form>
@@ -45,12 +45,12 @@
         <label for="total-paginas">Página atual:</label>
         <input type="text" name="total-paginas" id="total-paginas" data-calc="atual-input">
       </fieldset>
-      <button class="btn" type="submit" data-calc="btn-calcular">Calcular</button>
+      <button class="btn" type="submit" data-calc="btn-posUnica">Calcular</button>
     </form>
 
     <div class="calc__resultado">
-      <p><span class="pag__unidade" data-res="pag-atual">36</span> páginas equivalem:</p>
-      <h1><span data-res="posicao-atual">621,36</span> posições</h1>
+      <p><span class="pag__unidade" data-res="pag-atual">0</span> páginas equivalem:</p>
+      <h1><span data-res="posicao-atual">0</span> posições</h1>
     </div>
 
     <button class="link" data-calc="btn-total">Converter posições para página</button>
