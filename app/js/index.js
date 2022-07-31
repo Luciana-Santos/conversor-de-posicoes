@@ -2,18 +2,36 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/app/js/modules/helloWorld.js":
+/***/ "./src/app/js/modules/trocarCalc.js":
 /*!******************************************!*\
-  !*** ./src/app/js/modules/helloWorld.js ***!
+  !*** ./src/app/js/modules/trocarCalc.js ***!
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ helloWorld)
+/* harmony export */   "default": () => (/* binding */ initTrocarCalc)
 /* harmony export */ });
-function helloWorld() {
-  console.log('Hello, world!');
+function initTrocarCalc() {
+  var calcSection = document.querySelectorAll('[data-calc="section"]');
+  var btnPosAtual = document.querySelector('[data-calc="btn-atual"]');
+  var btnPosParaPag = document.querySelector('[data-calc="btn-total"]');
+  var hideClass = 'hide';
+
+  var esconderSection = function esconderSection(e) {
+    calcSection.forEach(function (section) {
+      return section.classList.remove(hideClass);
+    });
+    var elementoPai = e.target.parentNode;
+    elementoPai.classList.add(hideClass);
+  };
+
+  btnPosAtual.addEventListener('click', function (e) {
+    return esconderSection(e);
+  });
+  btnPosParaPag.addEventListener('click', function (e) {
+    return esconderSection(e);
+  });
 }
 
 /***/ })
@@ -81,9 +99,9 @@ var __webpack_exports__ = {};
   !*** ./src/app/js/index.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_helloWorld__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/helloWorld */ "./src/app/js/modules/helloWorld.js");
+/* harmony import */ var _modules_trocarCalc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/trocarCalc */ "./src/app/js/modules/trocarCalc.js");
 
-(0,_modules_helloWorld__WEBPACK_IMPORTED_MODULE_0__["default"])();
+(0,_modules_trocarCalc__WEBPACK_IMPORTED_MODULE_0__["default"])();
 })();
 
 /******/ })()
