@@ -12,6 +12,7 @@
   &__form {
     display: grid;
     gap: rem(20);
+    animation: show-left .3s forwards;
     
     fieldset {
       border: none;
@@ -30,6 +31,10 @@
       border: 2px solid transparent;
       background: var(--cl-vl-blue);
 
+      &::placeholder {
+        color: hsla(189, 20%, 40%, 1);
+      }
+
       &:hover, &:focus {
         outline: none;
         border-color: var(--cl-white);
@@ -41,6 +46,7 @@
   &__resultado {
     text-align: center;
     position: relative;
+    animation: show-right .3s forwards;
     
     .pag__unidade {
       font-size: rem(22);
@@ -75,7 +81,7 @@
     }
   }
 
-  .pos-atual {
+  .link {
     grid-column: 1 / -1;
     max-width: max-content;
     background: none;
@@ -84,7 +90,7 @@
     color: var(--cl-accent-pink);
     cursor: pointer;
     text-decoration: underline;
-    padding: rem(5);
+    padding-block: rem(10);
   }
 
   @include breakpoint(medium) {
@@ -93,4 +99,9 @@
     padding-block: rem(60);
     padding-inline: rem(60);
   }
+}
+
+[data-calc="btn-atual"] {
+  display: none;
+  animation: show-left .3s forwards;
 }

@@ -1,3 +1,7 @@
-import helloWorld from './modules/helloWorld';
+import initPosicaoAtual from './modules/posicaoAtual';
+import initPosicaoPagina from './modules/posicaoPagina';
+import initTrocarCalc from './modules/trocarCalc';
 
-helloWorld();
+initTrocarCalc();
+initPosicaoPagina();
+initPosicaoAtual();

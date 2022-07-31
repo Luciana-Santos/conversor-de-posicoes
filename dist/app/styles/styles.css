@@ -72,6 +72,26 @@ body {
   --cl-accent-hv: hsla(359, 46%, 54%, 1);
 }
 
+@keyframes show-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes show-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .header {
   padding-block: 2.5rem;
   background: linear-gradient(90deg, rgba(32, 46, 83, 0.77) 0%, rgba(73, 145, 157, 0.77) 100%), url(https://images.unsplash.com/photo-1635372722656-389f87a941b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80);
@@ -104,6 +124,7 @@ body {
 .calc__form {
   display: grid;
   gap: 1.25rem;
+  animation: show-left 0.3s forwards;
 }
 .calc__form fieldset {
   border: none;
@@ -120,6 +141,9 @@ body {
   border: 2px solid transparent;
   background: var(--cl-vl-blue);
 }
+.calc__form input::placeholder {
+  color: hsl(189deg, 20%, 40%);
+}
 .calc__form input:hover, .calc__form input:focus {
   outline: none;
   border-color: var(--cl-white);
@@ -128,6 +152,7 @@ body {
 .calc__resultado {
   text-align: center;
   position: relative;
+  animation: show-right 0.3s forwards;
 }
 .calc__resultado .pag__unidade {
   font-size: 1.375rem;
@@ -158,7 +183,7 @@ body {
     transform: translateY(-50%);
   }
 }
-.calc .pos-atual {
+.calc .link {
   grid-column: 1/-1;
   max-width: max-content;
   background: none;
@@ -167,7 +192,7 @@ body {
   color: var(--cl-accent-pink);
   cursor: pointer;
   text-decoration: underline;
-  padding: 0.3125rem;
+  padding-block: 0.625rem;
 }
 @media (min-width: 43.75em) {
   .calc {
@@ -176,6 +201,11 @@ body {
     padding-block: 3.75rem;
     padding-inline: 3.75rem;
   }
+}
+
+[data-calc=btn-atual] {
+  display: none;
+  animation: show-left 0.3s forwards;
 }
 
 /*# sourceMappingURL=styles.css.map */

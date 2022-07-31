@@ -16,43 +16,45 @@
     </div>
   </header>
 
-  <main class="calc container">
+  <!-- CALCULADORA - VALOR DA POSIÇÃO EM RELAÇÃO AS PÁGINAS DO LIVRO -->
+  <section class="calc container" data-calc="section">
     <form class="calc__form">
       <fieldset>
         <label for="total-posicoes">Total de posições no ebook:</label>
-        <input type="text" name="total-posicoes" id="total-posicoes">
+        <input type="text" name="total-posicoes" id="total-posicoes" data-calc="posicoes-input" placeholder="8564">
       </fieldset>
       <fieldset>
         <label for="total-paginas">Total de páginas no livro:</label>
-        <input type="text" name="total-paginas" id="total-paginas">
+        <input type="text" name="total-paginas" id="total-paginas" data-calc="paginas-input" placeholder="496">
       </fieldset>
-      <button class="btn" type="submit">Calcular</button>
+      <button class="btn" type="submit" data-calc="btn-calcular">Calcular</button>
     </form>
 
     <div class="calc__resultado">
-      <p><span class="pag__unidade">1</span> página equivale:</p>
-      <h1><span>17,27</span> posições</h1>
+      <p><span class="pag__unidade" data-res="pag-unica">1</span> página equivale:</p>
+      <h1><span data-res="posicao-unica">0</span> posições</h1>
     </div>
 
-    <button class="pos-atual">Calcular posição atual</button>
-  </main>
+    <button class="link" data-calc="btn-atual">Calcular posição atual</button>
+  </section>
 
-  <main class="calc container hide">
+  <!-- CALCULADORA - PÁGINA ATUAL PARA POSIÇÃO -->
+  <section class="calc container hide" data-calc="section">
     <form class="calc__form">
       <fieldset>
         <label for="total-paginas">Página atual:</label>
-        <input type="text" name="total-paginas" id="total-paginas">
+        <input type="text" name="total-paginas" id="total-paginas" data-calc="atual-input">
       </fieldset>
-      <button class="btn" type="submit">Calcular</button>
+      <button class="btn" type="submit" data-calc="btn-posUnica">Calcular</button>
     </form>
 
     <div class="calc__resultado">
-      <p><span class="pag__unidade">36</span> páginas equivalem:</p>
-      <h1><span>621,36</span> posições</h1>
+      <p><span class="pag__unidade" data-res="pag-atual">0</span> páginas equivalem:</p>
+      <h1><span data-res="posicao-atual">0</span> posições</h1>
     </div>
 
-    <button class="pos-atual">Converter posições para página</button>
-  </main>
+    <button class="link" data-calc="btn-total">Converter posições para página</button>
+  </section>
 
   <script src="./app/js/index.js" defer></script>
 </body>
