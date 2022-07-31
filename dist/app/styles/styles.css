@@ -204,7 +204,7 @@ body {
 }
 
 [data-calc=btn-atual] {
-  display: none;
+  display: none !important;
   animation: show-left 0.3s forwards;
 }
 
