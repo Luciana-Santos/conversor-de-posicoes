@@ -141,6 +141,9 @@ body {
   border: 2px solid transparent;
   background: var(--cl-vl-blue);
 }
+.calc__form input::placeholder {
+  color: hsl(189deg, 20%, 40%);
+}
 .calc__form input:hover, .calc__form input:focus {
   outline: none;
   border-color: var(--cl-white);
@@ -198,6 +201,11 @@ body {
     padding-block: 3.75rem;
     padding-inline: 3.75rem;
   }
+}
+
+[data-calc=btn-atual] {
+  display: none;
+  animation: show-left 0.3s forwards;
 }
 
 /*# sourceMappingURL=styles.css.map */

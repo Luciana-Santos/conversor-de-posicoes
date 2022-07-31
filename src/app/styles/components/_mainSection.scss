@@ -31,6 +31,10 @@
       border: 2px solid transparent;
       background: var(--cl-vl-blue);
 
+      &::placeholder {
+        color: hsla(189, 20%, 40%, 1);
+      }
+
       &:hover, &:focus {
         outline: none;
         border-color: var(--cl-white);
@@ -95,4 +99,9 @@
     padding-block: rem(60);
     padding-inline: rem(60);
   }
+}
+
+[data-calc="btn-atual"] {
+  display: none;
+  animation: show-left .3s forwards;
 }

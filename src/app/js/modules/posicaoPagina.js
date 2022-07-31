@@ -1,4 +1,7 @@
 export default function initPosicaoPagina() {
+  const form = document.querySelector('.calc__form');
+  const btnPosAtual = document.querySelector('[data-calc="btn-atual"]');
+
   const totalPosicoes = document.querySelector('[data-calc="posicoes-input"]');
   const totalPaginas = document.querySelector('[data-calc="paginas-input"]');
   const btnCalcular = document.querySelector('[data-calc="btn-calcular"]');
@@ -13,9 +16,12 @@ export default function initPosicaoPagina() {
     const totalPosicoesValue = totalPosicoes.value;
     const totalPaginasValue = totalPaginas.value;
     if (totalPosicoesValue !== '' && totalPaginasValue !== '') {
-      const valorPosicao = (totalPosicoesValue / totalPaginasValue).toFixed(2);
+      const valorPosicao = Math.trunc(totalPosicoesValue / totalPaginasValue);
       window.localStorage.setItem('posUnica', valorPosicao);
       mostrarResultado(valorPosicao);
+
+      form.reset();
+      btnPosAtual.style.display = 'block';
     } else {
       alert('Insira um valor.');
     }

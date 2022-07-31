@@ -2,6 +2,36 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/app/js/modules/posicaoAtual.js":
+/*!********************************************!*\
+  !*** ./src/app/js/modules/posicaoAtual.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ initPosicaoAtual)
+/* harmony export */ });
+function initPosicaoAtual() {
+  var paginaAtual = document.querySelector('[data-calc="atual-input"]');
+  var btnCalcular = document.querySelector('[data-calc="btn-posUnica"]');
+  var pagAtualElement = document.querySelector('[data-res="pag-atual"]');
+  var posAtualElement = document.querySelector('[data-res="posicao-atual"]');
+
+  function calcPosicaoAtual(e) {
+    e.preventDefault();
+    var posUnica = window.localStorage.getItem('posUnica');
+    var paginaAtualValue = paginaAtual.value;
+    var posAtualValue = Math.trunc(paginaAtualValue * posUnica);
+    pagAtualElement.innerText = paginaAtualValue;
+    posAtualElement.innerText = posAtualValue;
+  }
+
+  btnCalcular.addEventListener('click', calcPosicaoAtual);
+}
+
+/***/ }),
+
 /***/ "./src/app/js/modules/posicaoPagina.js":
 /*!*********************************************!*\
   !*** ./src/app/js/modules/posicaoPagina.js ***!
@@ -13,6 +43,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ initPosicaoPagina)
 /* harmony export */ });
 function initPosicaoPagina() {
+  var form = document.querySelector('.calc__form');
+  var btnPosAtual = document.querySelector('[data-calc="btn-atual"]');
   var totalPosicoes = document.querySelector('[data-calc="posicoes-input"]');
   var totalPaginas = document.querySelector('[data-calc="paginas-input"]');
   var btnCalcular = document.querySelector('[data-calc="btn-calcular"]');
@@ -28,9 +60,11 @@ function initPosicaoPagina() {
     var totalPaginasValue = totalPaginas.value;
 
     if (totalPosicoesValue !== '' && totalPaginasValue !== '') {
-      var valorPosicao = (totalPosicoesValue / totalPaginasValue).toFixed(2);
+      var valorPosicao = Math.trunc(totalPosicoesValue / totalPaginasValue);
       window.localStorage.setItem('posUnica', valorPosicao);
       mostrarResultado(valorPosicao);
+      form.reset();
+      btnPosAtual.style.display = 'block';
     } else {
       alert('Insira um valor.');
     }
@@ -138,12 +172,15 @@ var __webpack_exports__ = {};
   !*** ./src/app/js/index.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_posicaoPagina__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/posicaoPagina */ "./src/app/js/modules/posicaoPagina.js");
-/* harmony import */ var _modules_trocarCalc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/trocarCalc */ "./src/app/js/modules/trocarCalc.js");
+/* harmony import */ var _modules_posicaoAtual__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/posicaoAtual */ "./src/app/js/modules/posicaoAtual.js");
+/* harmony import */ var _modules_posicaoPagina__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/posicaoPagina */ "./src/app/js/modules/posicaoPagina.js");
+/* harmony import */ var _modules_trocarCalc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/trocarCalc */ "./src/app/js/modules/trocarCalc.js");
 
 
-(0,_modules_trocarCalc__WEBPACK_IMPORTED_MODULE_1__["default"])();
-(0,_modules_posicaoPagina__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+(0,_modules_trocarCalc__WEBPACK_IMPORTED_MODULE_2__["default"])();
+(0,_modules_posicaoPagina__WEBPACK_IMPORTED_MODULE_1__["default"])();
+(0,_modules_posicaoAtual__WEBPACK_IMPORTED_MODULE_0__["default"])();
 })();
 
 /******/ })()
