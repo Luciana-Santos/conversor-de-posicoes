@@ -75,7 +75,7 @@
     }
   }
 
-  .pos-atual {
+  .link {
     grid-column: 1 / -1;
     max-width: max-content;
     background: none;
@@ -84,7 +84,7 @@
     color: var(--cl-accent-pink);
     cursor: pointer;
     text-decoration: underline;
-    padding: rem(5);
+    padding-block: rem(10);
   }
 
   @include breakpoint(medium) {
