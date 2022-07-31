@@ -2,6 +2,45 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/app/js/modules/posicaoPagina.js":
+/*!*********************************************!*\
+  !*** ./src/app/js/modules/posicaoPagina.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ initPosicaoPagina)
+/* harmony export */ });
+function initPosicaoPagina() {
+  var totalPosicoes = document.querySelector('[data-calc="posicoes-input"]');
+  var totalPaginas = document.querySelector('[data-calc="paginas-input"]');
+  var btnCalcular = document.querySelector('[data-calc="btn-calcular"]');
+  var resultado = document.querySelector('[data-res="posicao-unica"]');
+
+  function mostrarResultado(res) {
+    resultado.innerText = res;
+  }
+
+  function converterPosicoes(e) {
+    e.preventDefault();
+    var totalPosicoesValue = totalPosicoes.value;
+    var totalPaginasValue = totalPaginas.value;
+
+    if (totalPosicoesValue !== '' && totalPaginasValue !== '') {
+      var valorPosicao = (totalPosicoesValue / totalPaginasValue).toFixed(2);
+      window.localStorage.setItem('posUnica', valorPosicao);
+      mostrarResultado(valorPosicao);
+    } else {
+      alert('Insira um valor.');
+    }
+  }
+
+  btnCalcular.addEventListener('click', converterPosicoes);
+}
+
+/***/ }),
+
 /***/ "./src/app/js/modules/trocarCalc.js":
 /*!******************************************!*\
   !*** ./src/app/js/modules/trocarCalc.js ***!
@@ -99,9 +138,12 @@ var __webpack_exports__ = {};
   !*** ./src/app/js/index.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_trocarCalc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/trocarCalc */ "./src/app/js/modules/trocarCalc.js");
+/* harmony import */ var _modules_posicaoPagina__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/posicaoPagina */ "./src/app/js/modules/posicaoPagina.js");
+/* harmony import */ var _modules_trocarCalc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/trocarCalc */ "./src/app/js/modules/trocarCalc.js");
 
-(0,_modules_trocarCalc__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+(0,_modules_trocarCalc__WEBPACK_IMPORTED_MODULE_1__["default"])();
+(0,_modules_posicaoPagina__WEBPACK_IMPORTED_MODULE_0__["default"])();
 })();
 
 /******/ })()
