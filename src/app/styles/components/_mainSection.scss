@@ -12,6 +12,7 @@
   &__form {
     display: grid;
     gap: rem(20);
+    animation: show-left .3s forwards;
     
     fieldset {
       border: none;
@@ -41,6 +42,7 @@
   &__resultado {
     text-align: center;
     position: relative;
+    animation: show-right .3s forwards;
     
     .pag__unidade {
       font-size: rem(22);

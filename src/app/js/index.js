@@ -1,3 +1,3 @@
-import helloWorld from './modules/helloWorld';
+import initTrocarCalc from './modules/trocarCalc';
 
-helloWorld();
+initTrocarCalc();
